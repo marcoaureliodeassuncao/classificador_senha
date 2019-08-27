@@ -3,8 +3,8 @@ import re
 
 
 '''critérios para determinar a classificação das senhas:
-	- A senha deve conter pelo menos um carácter lower case,
-	um carácter upper case, um número, um símbolo e ter pelo menos
+	- A senha deve conter pelo menos um caractere lower case,
+	um caractere upper case, um número, um caractere especial e ter pelo menos
 	8 caracteres;
 
 	- a senha que não obedecer a todos esse critérios será categorizada
