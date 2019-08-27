@@ -24,6 +24,13 @@ class Tester(unittest.TestCase):
 		self.assertEqual(classificar_senha('RHNyOPpsDKHcG'), testWeak)
 		pass
 
+	def test_classfica_senha_numbers(self):
+		self.assertEqual(classificar_senha('5641321987'), testWeak)
+		pass
+
+	def test_classifica_senha_symbols(self):
+		self.assertEqual(classificar_senha('!@##$@#$@!@$@#'),testWeak)
+
 	def test_classifica_senha_lower_upper_numbers(self):
 		self.assertEqual(classificar_senha('RGSGFSsfgsfsf345'), testWeak)
 		pass
