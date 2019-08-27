@@ -21,6 +21,9 @@ import re
 def classificar_senha(senha):
 	flag = 0
 
+	if ' ' in senha:
+		return False
+
 	if len(senha) < 8:
 		return flag
 

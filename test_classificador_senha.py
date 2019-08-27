@@ -8,6 +8,8 @@ testMedium = 1
 
 testStrong = 2
 
+testFalse = False
+
 
 class Tester(unittest.TestCase):
 
@@ -28,6 +30,10 @@ class Tester(unittest.TestCase):
 		self.assertEqual(classificar_senha('5641321987'), testWeak)
 		pass
 
+	def test_classifica_senha_palavra(self):
+		self.assertEqual(classificar_senha('pizza'), testWeak)
+		pass
+
 	def test_classifica_senha_symbols(self):
 		self.assertEqual(classificar_senha('!@##$@#$@!@$@#'),testWeak)
 
@@ -41,6 +47,10 @@ class Tester(unittest.TestCase):
 
 	def test_classifica_senha_strong_case(self):
 		self.assertEqual(classificar_senha('123$%aSDamsdpoqj'), testStrong)
+		pass
+
+	def test_classifica_senha_espaco(self):
+		self.assertEqual(classificar_senha('tesT@ de 3spAç0'),testFalse)
 
 
 if __name__ == '__main__':
