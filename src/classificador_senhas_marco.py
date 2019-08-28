@@ -20,6 +20,8 @@ import re
 
 def classificar_senha(senha):
 	flag = 0
+	reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+	pat = re.compile(reg)
 
 	if ' ' in senha:
 		return False
@@ -28,13 +30,13 @@ def classificar_senha(senha):
 		return flag
 
 	elif len(senha)>8 and len(senha)<=12:
-		if re.search("[a-z]", senha) and re.search('[A-Z]', senha) and re.search('[0-9]', senha) and re.search('[_@$#!*-+=]', senha):
+		if re.search(pat, senha):
 			flag+=1
 		return flag
 
 	elif len(senha)>12:
 		flag+=1
-		if re.search("[a-z]", senha) and re.search('[A-Z]', senha) and re.search('[0-9]', senha) and re.search('[_@$!#$%*-+=]', senha):
+		if re.search(pat, senha):
 			flag+=1
 		else:
 			flag-=1
@@ -44,3 +46,4 @@ def classificar_senha(senha):
 if __name__ == '__main__':
 
 	print(classificar_senha(sys.argv[1]))
+
